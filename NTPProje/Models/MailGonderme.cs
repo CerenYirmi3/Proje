@@ -14,9 +14,9 @@ namespace NTPProje.Models
     {
         ProjeSQLEntities db = new ProjeSQLEntities();
 
-        public void Microsoft(string GondericiMail, string GondericiPass, string AliciMail)
+        public void Microsoft(string AliciMail)
         {
-            KayitBigileri bilgiler = db.KayitBigileri.FirstOrDefault(x => x.MailAdress == GondericiMail);
+            KayitBilgileri bilgiler = db.KayitBilgileri.FirstOrDefault(x => x.MailAdress == AliciMail);
             Random rnd = new Random();
             bilgiler.Password = rnd.Next(1000, 10000).ToString();
             db.SaveChanges();
@@ -24,15 +24,14 @@ namespace NTPProje.Models
             sc.Port = 587;
             sc.Host = "smtp.outlook.com";
             sc.EnableSsl = true;
-            sc.Credentials = new NetworkCredential(GondericiMail, GondericiPass);
+            sc.Credentials = new NetworkCredential("projeicinmailadresi@gmail.com", "zcfddwozoukuycpr");
 
             MailMessage mail = new MailMessage();
-            mail.From = new MailAddress(GondericiMail, "Şifre Yenileme maili" );
+            mail.From = new MailAddress("projeicinmailadresi@gmail.com" );
             mail.To.Add(AliciMail);
             mail.Subject = "Şifre Değiştirme Talebi";
             mail.IsBodyHtml = true;
             mail.Body = $@"{DateTime.Now.ToString()} Tarihinde şifre değiştirme talebinde bulundunuz. Yeni şifreniz{bilgiler.Password}";
-            //sc.Timeout = 60;
             sc.Send(mail);
         }
 

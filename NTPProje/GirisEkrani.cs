@@ -98,7 +98,7 @@ namespace NTPProje
 
         private void button2_Click(object sender, EventArgs e)
         {
-            KayitBigileri Durum = db.KayitBigileri.FirstOrDefault(x => x.MailAdress == textBox1.Text && x.Password == textBox2.Text);
+            KayitBilgileri Durum = db.KayitBilgileri.FirstOrDefault(x => x.MailAdress == textBox1.Text && x.Password == textBox2.Text);
             if (Durum != null)
             {
                 GirisBasarili gb = new GirisBasarili();

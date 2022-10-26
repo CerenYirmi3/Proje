@@ -25,6 +25,7 @@ namespace NTPProje.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<KayitBigileri> KayitBigileri { get; set; }
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
+        public virtual DbSet<KayitBilgileri> KayitBilgileri { get; set; }
     }
 }

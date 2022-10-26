@@ -22,15 +22,25 @@ namespace NTPProje
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Close();
         }
+
 
         MailGonderme mg = new MailGonderme();
 
         private void button2_Click(object sender, EventArgs e)
         {
-            SifreYenilemeBildirim syb = new SifreYenilemeBildirim();
-            syb.ShowDialog();
+            try
+            {
+                 mg.Microsoft(textBox1.Text);       
+            }
+            catch (Exception)
+            {
+                SifreYenilemeBildirim syb = new SifreYenilemeBildirim();
+                syb.ShowDialog();
+                throw;
+            }
+            
         }
 
         private void textBox1_Enter(object sender, EventArgs e)
@@ -50,29 +60,6 @@ namespace NTPProje
                 textBox1.Text = "Mail Adresi";
                 textBox1.ForeColor = Color.DimGray;
 
-            }
-        }
-
-        private void textBox2_Enter(object sender, EventArgs e)
-        {
-            if (textBox2.Text == "Mail Şifresi")
-            {
-                textBox2.Text = "";
-                textBox2.ForeColor = Color.Black;
-                textBox2.PasswordChar = '*';
-
-            }
-        }
-
-        char? none = null;
-
-        private void textBox2_Leave(object sender, EventArgs e)
-        {
-            if (textBox2.Text == "")
-            {
-                textBox2.Text = "Mail Şifresi";
-                textBox2.ForeColor = Color.DimGray;
-                textBox2.PasswordChar = Convert.ToChar(none); 
             }
         }
 

@@ -50,4 +50,5 @@ namespace NTPProje
                 this.SetDesktopLocation(MousePosition.X - mouse_x, MousePosition.Y - mouse_y);
             }
         }
+    }
 }

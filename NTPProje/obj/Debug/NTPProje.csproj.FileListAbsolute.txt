@@ -19,3 +19,24 @@ D:\Visual projeler\NTPProje\obj\Debug\NTPProje.GirisBasarisiz.resources
 D:\Visual projeler\NTPProje\obj\Debug\NTPProje.GirisEkrani.resources
 D:\Visual projeler\NTPProje\obj\Debug\NTPProje.ŞifreYenileme.resources
 D:\Visual projeler\NTPProje\obj\Debug\NTPProje.SifreYenilemeBildirim.resources
+D:\Github\Proje\NTPProje\obj\Debug\NTPProje.csproj.AssemblyReference.cache
+D:\Github\Proje\NTPProje\obj\Debug\NTPProje.csproj.SuggestedBindingRedirects.cache
+D:\Github\Proje\NTPProje\obj\Debug\NTPProje.Form1.resources
+D:\Github\Proje\NTPProje\obj\Debug\NTPProje.GirisBasarili.resources
+D:\Github\Proje\NTPProje\obj\Debug\NTPProje.GirisBasarisiz.resources
+D:\Github\Proje\NTPProje\obj\Debug\NTPProje.GirisEkrani.resources
+D:\Github\Proje\NTPProje\obj\Debug\NTPProje.Properties.Resources.resources
+D:\Github\Proje\NTPProje\obj\Debug\NTPProje.SifreYenilemeBildirim.resources
+D:\Github\Proje\NTPProje\obj\Debug\NTPProje.ŞifreYenileme.resources
+D:\Github\Proje\NTPProje\obj\Debug\NTPProje.csproj.GenerateResource.cache
+D:\Github\Proje\NTPProje\obj\Debug\NTPProje.csproj.CoreCompileInputs.cache
+D:\Github\Proje\NTPProje\obj\Debug\NTPProje.exe
+D:\Github\Proje\NTPProje\obj\Debug\NTPProje.pdb
+D:\Github\Proje\NTPProje\bin\Debug\NTPProje.exe.config
+D:\Github\Proje\NTPProje\bin\Debug\NTPProje.exe
+D:\Github\Proje\NTPProje\bin\Debug\NTPProje.pdb
+D:\Github\Proje\NTPProje\bin\Debug\EntityFramework.dll
+D:\Github\Proje\NTPProje\bin\Debug\EntityFramework.SqlServer.dll
+D:\Github\Proje\NTPProje\bin\Debug\EntityFramework.xml
+D:\Github\Proje\NTPProje\bin\Debug\EntityFramework.SqlServer.xml
+D:\Github\Proje\NTPProje\obj\Debug\NTPProje.csproj.CopyComplete
