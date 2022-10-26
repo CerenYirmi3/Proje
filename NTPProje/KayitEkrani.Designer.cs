@@ -38,6 +38,7 @@ namespace NTPProje
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
+            this.textBox5 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // button1
@@ -69,7 +70,7 @@ namespace NTPProje
             // 
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox1.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox1.Location = new System.Drawing.Point(47, 81);
+            this.textBox1.Location = new System.Drawing.Point(47, 80);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(151, 19);
@@ -83,7 +84,7 @@ namespace NTPProje
             // 
             this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox2.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox2.Location = new System.Drawing.Point(47, 121);
+            this.textBox2.Location = new System.Drawing.Point(47, 110);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(151, 19);
@@ -96,12 +97,12 @@ namespace NTPProje
             // 
             this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox3.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox3.Location = new System.Drawing.Point(47, 158);
+            this.textBox3.Location = new System.Drawing.Point(47, 140);
             this.textBox3.Multiline = true;
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(151, 19);
             this.textBox3.TabIndex = 8;
-            this.textBox3.Text = "Mail Adresi";
+            this.textBox3.Text = "Telefon Numarası";
             this.textBox3.Enter += new System.EventHandler(this.textBox3_Enter);
             this.textBox3.Leave += new System.EventHandler(this.textBox3_Leave);
             // 
@@ -109,12 +110,12 @@ namespace NTPProje
             // 
             this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox4.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox4.Location = new System.Drawing.Point(47, 191);
+            this.textBox4.Location = new System.Drawing.Point(47, 170);
             this.textBox4.Multiline = true;
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(151, 19);
             this.textBox4.TabIndex = 9;
-            this.textBox4.Text = "Şifre";
+            this.textBox4.Text = "Mail Adresi";
             this.textBox4.Enter += new System.EventHandler(this.textBox4_Enter);
             this.textBox4.Leave += new System.EventHandler(this.textBox4_Leave);
             // 
@@ -133,13 +134,27 @@ namespace NTPProje
             this.linkLabel2.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
             // 
-            // Form1
+            // textBox5
+            // 
+            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox5.ForeColor = System.Drawing.Color.DimGray;
+            this.textBox5.Location = new System.Drawing.Point(47, 200);
+            this.textBox5.Multiline = true;
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(151, 20);
+            this.textBox5.TabIndex = 12;
+            this.textBox5.Text = "Şifre";
+            this.textBox5.Enter += new System.EventHandler(this.textBox5_Enter);
+            this.textBox5.Leave += new System.EventHandler(this.textBox5_Leave);
+            // 
+            // KayitEkrani
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(302, 339);
+            this.Controls.Add(this.textBox5);
             this.Controls.Add(this.linkLabel2);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.textBox3);
@@ -149,14 +164,14 @@ namespace NTPProje
             this.Controls.Add(this.button1);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Form1";
+            this.Name = "KayitEkrani";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "KayitEkrani";
             this.TransparencyKey = System.Drawing.Color.Silver;
-            this.Load += new System.EventHandler(this.Form1_Load);
-            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
-            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseMove);
-            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseUp);
+            this.Load += new System.EventHandler(this.KayitEkrani_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.KayitEkrani_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.KayitEkrani_MouseMove);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.KayitEkrani_MouseUp);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -172,6 +187,7 @@ namespace NTPProje
         private System.Windows.Forms.TextBox textBox4;
         private EventHandler button2_Click;
         private System.Windows.Forms.LinkLabel linkLabel2;
+        private System.Windows.Forms.TextBox textBox5;
     }
 }
 

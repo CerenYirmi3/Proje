@@ -26,10 +26,51 @@ namespace NTPProje
             this.Close();
         }
 
+        static string constring = "Data Source=DESKTOP-UKN5J7T;Initial Catalog=ProjeSQL;Integrated Security=True";
+        SqlConnection connect = new SqlConnection(constring);
+
         private void button2_Click_1(object sender, EventArgs e)
         {
-           // SqlConnection command = new SqlConnection("Insert into KayitBilgileri (FirstName, LastName, MailAdress, Password) values ('"+textBox1.Text+ "', '"+textBox2.Text+ "', '"+textBox3.Text+ "', '"+textBox4.Text+"')");
+            try
+            {
+                if (connect.State == ConnectionState.Closed)
+                {
+                    connect.Open();
+                }
+                if (textBox1.Text == "İsim" || textBox2.Text == "Soyisim" || textBox3.Text == "Telefon Numarası" || textBox4.Text == "Mail Adresi" || textBox5.Text == "Şifre" )
+                {
+                    KayitBos kb = new KayitBos();
+                    kb.ShowDialog();
+                }
+                else
+                {
+                    string kayit = "insert into KayitBİlgileri (FirstName,LastName,PhoneNumber,MailAdress,Password) values(@ad,@soyad,@tel,@mail,@sifre)";
+                    SqlCommand komut = new SqlCommand(kayit,connect);
+                      komut.Parameters.AddWithValue("@ad", textBox1.Text);
+                      komut.Parameters.AddWithValue("@soyad", textBox2.Text);
+                      komut.Parameters.AddWithValue("@tel", textBox3.Text);
+                      komut.Parameters.AddWithValue("@mail", textBox4.Text);
+                      komut.Parameters.AddWithValue("@sifre", textBox5.Text);
+                      komut.ExecuteNonQuery();
+                      connect.Close();
+
+                      KayitBasarili kb = new KayitBasarili();
+                      kb.ShowDialog();
+                }
+                
+
+            }
+            catch (Exception hata)
+            {
+                MessageBox.Show("Kayıt Esnasında Hata Meydana Geldi!" + hata.Message);
+            }
             
+        }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            GirisEkrani ge = new GirisEkrani();
+            ge.ShowDialog();
         }
 
         private void KayitEkrani_Load(object sender, EventArgs e)
@@ -103,7 +144,7 @@ namespace NTPProje
 
         private void textBox3_Enter(object sender, EventArgs e)
         {
-            if (textBox3.Text == "Mail Adresi")
+            if (textBox3.Text == "Telefon Numarası")
             {
                 textBox3.Text = "";
                 textBox3.ForeColor = Color.Black;
@@ -115,7 +156,7 @@ namespace NTPProje
         {
             if (textBox3.Text == "")
             {
-                textBox3.Text = "Mail Adresi";
+                textBox3.Text = "Telefon Numarası";
                 textBox3.ForeColor = Color.DimGray;
 
             }
@@ -124,23 +165,20 @@ namespace NTPProje
 
         private void textBox4_Enter(object sender, EventArgs e)
         {
-            if (textBox4.Text == "Şifre")
+            if (textBox4.Text == "Mail Adresi")
             {
                 textBox4.Text = "";
                 textBox4.ForeColor = Color.Black;
-                textBox4.PasswordChar = '*';
 
             }
         }
-        char? none = null;
 
         private void textBox4_Leave(object sender, EventArgs e)
         {
             if (textBox4.Text == "")
             {
-                textBox4.Text = "Şifre";
+                textBox4.Text = "Mail Adresi";
                 textBox4.ForeColor = Color.DimGray;
-                textBox4.PasswordChar = Convert.ToChar(none);
 
             }
         }
@@ -150,12 +188,28 @@ namespace NTPProje
 
         }
 
-        
+        char? none = null;
 
-        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void textBox5_Enter(object sender, EventArgs e)
         {
-            GirisEkrani ge = new GirisEkrani();
-            ge.ShowDialog();
+            if (textBox5.Text == "Şifre")
+            {
+                textBox5.Text = "";
+                textBox5.ForeColor = Color.Black;
+                textBox5.PasswordChar = '*';
+
+            }
+        }
+
+        private void textBox5_Leave(object sender, EventArgs e)
+        {
+            if (textBox5.Text == "")
+            {
+                textBox5.Text = "Şifre";
+                textBox5.ForeColor = Color.DimGray;
+                textBox5.PasswordChar = Convert.ToChar(none);
+
+            }
         }
     }
 }

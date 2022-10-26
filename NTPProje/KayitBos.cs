@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace NTPProje
 {
-    public partial class MailBasarisiz : Form
+    public partial class KayitBos : Form
     {
-        public MailBasarisiz()
+        public KayitBos()
         {
             InitializeComponent();
         }
@@ -31,19 +31,19 @@ namespace NTPProje
         int mouse_x;
         int mouse_y;
 
-        private void SifreYenilemeBildirim_MouseDown(object sender, MouseEventArgs e)
+        private void KayitBos_MouseDown(object sender, MouseEventArgs e)
         {
             move = true;
             mouse_x = e.X;
             mouse_y = e.Y;
         }
 
-        private void SifreYenilemeBildirim_MouseUp(object sender, MouseEventArgs e)
+        private void KayitBos_MouseUp(object sender, MouseEventArgs e)
         {
             move = false;
         }
 
-        private void SifreYenilemeBildirim_MouseMove(object sender, MouseEventArgs e)
+        private void KayitBos_MouseMove(object sender, MouseEventArgs e)
         {
             if (move)
             {

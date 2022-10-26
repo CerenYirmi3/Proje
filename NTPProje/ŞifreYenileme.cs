@@ -33,11 +33,9 @@ namespace NTPProje
                 MailBasarili mb = new MailBasarili();
                 mb.ShowDialog();   
             }
-            catch (Exception)
+            catch (Exception hata)
             {
-                MailBasarisiz syb = new MailBasarisiz();
-                syb.ShowDialog();
-                throw;
+                MessageBox.Show("Mail Göndirilmedi. " + hata.Message );
             }
             
         }
