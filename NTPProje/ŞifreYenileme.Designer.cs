@@ -32,7 +32,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // button1
@@ -70,7 +69,6 @@
             this.button2.Text = "Şifremi Sıfırla";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
-           
             // 
             // ŞifreYenileme
             // 
@@ -79,7 +77,6 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(412, 240);
-            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button1);
@@ -100,6 +97,5 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox2;
     }
 }

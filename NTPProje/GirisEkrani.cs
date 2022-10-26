@@ -28,7 +28,7 @@ namespace NTPProje
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+           this.Close();
         }
 
         private void textBox1_Enter(object sender, EventArgs e)
@@ -62,6 +62,7 @@ namespace NTPProje
         }
 
         char? none = null;
+
         private void textBox2_Leave(object sender, EventArgs e)
         {
             if (textBox2.Text == "")
@@ -120,7 +121,7 @@ namespace NTPProje
 
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Form1 fm = new Form1();
+            KayitEkrani fm = new KayitEkrani();
             fm.ShowDialog();
         }
     }

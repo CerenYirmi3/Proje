@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace NTPProje
 {
-    public partial class GirisBasarili : Form
+    public partial class MailBasarisiz : Form
     {
-        public GirisBasarili()
+        public MailBasarisiz()
         {
             InitializeComponent();
-        }
-
-        private void GirisBasarili_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -27,33 +22,33 @@ namespace NTPProje
             this.Close();
         }
 
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
         bool move;
         int mouse_x;
         int mouse_y;
 
-        private void GirisBasarili_MouseDown(object sender, MouseEventArgs e)
+        private void SifreYenilemeBildirim_MouseDown(object sender, MouseEventArgs e)
         {
             move = true;
             mouse_x = e.X;
             mouse_y = e.Y;
         }
 
-        private void GirisBasarili_MouseUp(object sender, MouseEventArgs e)
+        private void SifreYenilemeBildirim_MouseUp(object sender, MouseEventArgs e)
         {
             move = false;
         }
 
-        private void GirisBasarili_MouseMove(object sender, MouseEventArgs e)
+        private void SifreYenilemeBildirim_MouseMove(object sender, MouseEventArgs e)
         {
             if (move)
             {
                 this.SetDesktopLocation(MousePosition.X - mouse_x, MousePosition.Y - mouse_y);
             }
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

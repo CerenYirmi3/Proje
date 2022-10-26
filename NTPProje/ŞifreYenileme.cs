@@ -13,8 +13,6 @@ namespace NTPProje
 {
     public partial class ŞifreYenileme : Form
     {
-        ProjeSQLEntities db = new ProjeSQLEntities();
-
         public ŞifreYenileme()
         {
             InitializeComponent();
@@ -25,18 +23,19 @@ namespace NTPProje
             this.Close();
         }
 
-
         MailGonderme mg = new MailGonderme();
 
         private void button2_Click(object sender, EventArgs e)
         {
             try
             {
-                 mg.Microsoft(textBox1.Text);       
+                mg.Microsoft(textBox1.Text);
+                MailBasarili mb = new MailBasarili();
+                mb.ShowDialog();   
             }
             catch (Exception)
             {
-                SifreYenilemeBildirim syb = new SifreYenilemeBildirim();
+                MailBasarisiz syb = new MailBasarisiz();
                 syb.ShowDialog();
                 throw;
             }

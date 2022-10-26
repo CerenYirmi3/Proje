@@ -10,42 +10,37 @@ using System.Windows.Forms;
 
 namespace NTPProje
 {
-    public partial class SifreYenilemeBildirim : Form
+    public partial class MailBasarili : Form
     {
-        public SifreYenilemeBildirim()
+        public MailBasarili()
         {
             InitializeComponent();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Close();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
+          bool move;
+          int mouse_x;
+          int mouse_y;
 
-        }
-
-        bool move;
-        int mouse_x;
-        int mouse_y;
-
-        private void SifreYenilemeBildirim_MouseDown(object sender, MouseEventArgs e)
+        private void MailBasarili_MouseDown(object sender, MouseEventArgs e)
         {
             move = true;
             mouse_x = e.X;
             mouse_y = e.Y;
         }
 
-        private void SifreYenilemeBildirim_MouseUp(object sender, MouseEventArgs e)
+        private void MailBasarili_MouseUp(object sender, MouseEventArgs e)
         {
             move = false;
         }
 
-        private void SifreYenilemeBildirim_MouseMove(object sender, MouseEventArgs e)
+        private void MailBasarili_MouseMove(object sender, MouseEventArgs e)
         {
-            if (move)
+            if (move == true)
             {
                 this.SetDesktopLocation(MousePosition.X - mouse_x, MousePosition.Y - mouse_y);
             }

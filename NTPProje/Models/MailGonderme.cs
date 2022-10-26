@@ -17,12 +17,12 @@ namespace NTPProje.Models
         public void Microsoft(string AliciMail)
         {
             KayitBilgileri bilgiler = db.KayitBilgileri.FirstOrDefault(x => x.MailAdress == AliciMail);
-            Random rnd = new Random();
+           /* Random rnd = new Random();
             bilgiler.Password = rnd.Next(1000, 10000).ToString();
-            db.SaveChanges();
+            db.SaveChanges();*/
             SmtpClient sc = new SmtpClient();
             sc.Port = 587;
-            sc.Host = "smtp.outlook.com";
+            sc.Host = "smtp.gmail.com";
             sc.EnableSsl = true;
             sc.Credentials = new NetworkCredential("projeicinmailadresi@gmail.com", "zcfddwozoukuycpr");
 
@@ -31,13 +31,9 @@ namespace NTPProje.Models
             mail.To.Add(AliciMail);
             mail.Subject = "Şifre Değiştirme Talebi";
             mail.IsBodyHtml = true;
-            mail.Body = $@"{DateTime.Now.ToString()} Tarihinde şifre değiştirme talebinde bulundunuz. Yeni şifreniz{bilgiler.Password}";
+            mail.Body = $@"{DateTime.Now.ToString()} Tarihinde şifre değiştirme talebinde bulundunuz. Güncel Şifreniz : {bilgiler.Password}";
             sc.Send(mail);
         }
 
-        internal void Microsoft(TextBox textBox2, string text1, string text2, string text3)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
